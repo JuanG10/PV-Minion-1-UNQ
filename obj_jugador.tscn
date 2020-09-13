@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Jugador.gd" type="Script" id=1]
+[ext_resource path="res://Recursos Minion 1/Jugador.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 54.4058
+
+[node name="obj_jugador" type="KinematicBody2D"]
+pause_mode = 1
+position = Vector2( 378.378, 263.107 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="col_jugador" type="CollisionShape2D" parent="."]
+position = Vector2( 0.632599, -0.226089 )
+shape = SubResource( 1 )
+
+[node name="spr_jugador" type="Sprite" parent="col_jugador"]
+position = Vector2( 0.232269, 0.309998 )
+scale = Vector2( 0.367185, 0.410218 )
+texture = ExtResource( 2 )
