@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://obj_agujero.gd" type="Script" id=1]
+[ext_resource path="res://obj_triangulo.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Recursos Minion 1/Agujero.png" type="Texture" id=3]
+[ext_resource path="res://Timer.gd" type="Script" id=4]
+
+[node name="obj_agujero" type="Node2D"]
+position = Vector2( 784.469, 347.124 )
+script = ExtResource( 1 )
+
+[node name="spw_triangulo" type="Position2D" parent="."]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+npc = ExtResource( 2 )
+
+[node name="spr_agujero" type="Sprite" parent="spw_triangulo"]
+position = Vector2( -22.479, 8.22742 )
+scale = Vector2( 0.235961, 0.227957 )
+texture = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="spw_triangulo"]
+wait_time = 3.0
+autostart = true
+[connection signal="timeout" from="spw_triangulo/Timer" to="spw_triangulo" method="_on_Timer_timeout"]

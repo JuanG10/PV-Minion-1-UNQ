@@ -13,16 +13,7 @@ _global_script_class_icons={
 
 }
 
-[application]
-
-config/name="TP - Minion 1"
-config/icon="res://icon.png"
-
 [autoload]
 
-Obj_Jugador="*res://obj_jugador.tscn"
+Jugador="*res://obj_jugador.tscn"
 Interfaz="*res://Interfaz.tscn"
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

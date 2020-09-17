@@ -6,6 +6,8 @@ export (PackedScene) var npc
 
 var rand_pos = Vector2()
 
+onready var label = get_node("/root/Label")
+
 func _ready():
 	randomize()
 
@@ -20,3 +22,4 @@ func _on_Timer_timeout():
 	newScoreObj.global_position = rand_pos
 	# Conecto su senial con con el Label de Puntaje
 	newScoreObj.connect("score_increment", Interfaz, "_on_obj_jugador_score_increment")
+	newScoreObj.connect("score_increment", label, "_on_obj_jugador_score_increment")

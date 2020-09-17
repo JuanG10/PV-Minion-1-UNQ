@@ -10,3 +10,5 @@ func _on_Timer_timeout():
 	# Le doy una posicion inicial
 	newEnemy.global_position = global_position - Vector2(0,40)
 	# La resta con el vector es para que instancie sobre el spr_agujero
+	newEnemy.connect("hit", Jugador, "_on_obj_triangulo_hit")
+	newEnemy.connect("hit", Interfaz, "_on_obj_triangulo_hit")

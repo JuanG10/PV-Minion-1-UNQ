@@ -69,3 +69,6 @@ func _movement_logic():
 			# Mantengo la direccion solo si se uso el dash
 			velocity = move_and_slide(position.direction_to(target) * multiplier)
 		velocity = move_and_slide(velocity)
+
+func _on_obj_triangulo_hit():
+	get_tree().reload_current_scene()
