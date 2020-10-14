@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/moving_plataform_behavior2.gd" type="Script" id=1]
+[ext_resource path="res://Recursos/Plataforma.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 63.2296, 5.76315 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 63.2253, 1.7158 )
+
+[node name="Plataforma" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="plataforma_spr" type="Sprite" parent="."]
+position = Vector2( 4.60446e-06, -0.23158 )
+scale = Vector2( 0.837427, 0.292246 )
+texture = ExtResource( 2 )
+
+[node name="plataforma_col" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="plat_area_arriba" type="Area2D" parent="."]
+position = Vector2( 0, -7.47479 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plat_area_arriba"]
+shape = SubResource( 2 )

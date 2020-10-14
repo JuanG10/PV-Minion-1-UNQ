@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Caja.gd" type="Script" id=1]
+[ext_resource path="res://Recursos/Caja.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.042, 13.3509 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 118.837
+
+[node name="Caja" type="RigidBody2D"]
+position = Vector2( 224.682, 248.588 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="caja_col" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="caja_area_spr" type="Sprite" parent="caja_col"]
+position = Vector2( 0.284943, -0.0458221 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+
+[node name="caja_area" type="Area2D" parent="."]
+position = Vector2( -190.285, 6.74237 )
+
+[node name="caja_area_col" type="CollisionShape2D" parent="caja_area"]
+position = Vector2( 190.266, -7.63925 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="caja_area" to="." method="_on_Area2D_body_entered"]
